@@ -44,7 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
         AudioPlayer.addEventListener('ended', playNextTrack);
     }
 
-    const titles = ['#', '#D', '#DE', '#DEA', '#DEAD', '#DEAD$', '#DEAD$H', '#DEAD$HO', '#DEAD$HOT', '#DEAD$HOT', '#DEAD$HO', '#DEAD$H', '#DEAD$', '#DEAD', '#DEA', '#DE', '#D', '#'];
+    const titles = ['#', '#S', '#Sw', '#Swa', '#Swat', '#Swats', '#Swats!', '#Swats!u', '#Swats!un', '#Swats!unt', '#Swats!unti', '#Swats!until', '#Swats!until#', '#Swats!until#d', '#Swats!until#de', '#Swats!until#dea', '#Swats!until#deat', '#Swats!until#death', '#Swats!until#deat', '#Swats!until#dea', '#Swats!until#de', '#Swats!until#d', '#Swats!until#', '#Swats!until', '#Swats!unti', '#Swats!unt', '#Swats!un', '#Swats!u', '#Swats!', '#Swats', '#Swat', '#Swa', '#Sw', '#S', '#'];
+
     let index = 0;
 
     function changeTitle() {
