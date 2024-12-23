@@ -154,15 +154,17 @@
         .black-box {
         background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
         border-radius: 15px; /* Rounded corners */
-        width: 400px; /* Control the width of the box */
+        width: 400px; /* Box width */
         height: 200px; /* Fixed height */
-        margin: 0 auto; /* Center the box horizontally */
-        text-align: center; /* Center align the text */
-        display: flex; /* Flexbox to align content */
+        margin: 0 auto; /* Center horizontally */
+        text-align: center; /* Center align text */
+        display: flex; /* Flexbox for alignment */
         flex-direction: column; /* Stack children vertically */
         justify-content: center; /* Vertically center content */
         align-items: center; /* Horizontally center content */
-        overflow: hidden; /* Prevent text overflow */
+        overflow: hidden; /* Prevent overflow of content */
+        z-index: 10; /* Place the box above particles */
+        position: relative; /* Ensure z-index works */
     }
 
     .social-links p {
@@ -205,18 +207,6 @@
     <audio id="music-player"></audio>
 
     <script src="main.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            new NextParticle({
-                image: document.querySelector("#logo-center img"),
-                color: "#FFFFFF",
-                maxWidth: 500,
-                maxHeight: 500,
-                particleGap: 2,
-                noise: 15,
-                speed: 0.1,
-            });
-        });
-    </script>
+
 </body>
 </html>
