@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DasEnde Paste</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: black;
+            color: rgb(255, 255, 255);
+            padding: 20px;
+        }
+        .header-box, .section-box {
+            border: 2px solid rgb(247, 7, 175);
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #0a0a0a;
+        }
+        .header-box {
+            text-align: center;
+        }
+        .section-box pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .box-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            border-bottom: 1px solid rgb(216, 45, 2);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-box">
+        <pre>
+            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⣤⢤⡤⣤⠤⣔⡲⡔⢦⣒⠦⡤⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⢻⢥⣛⡜⢮⣼⢲⣙⢦⢳⡹⢲⡍⣞⡱⢫⡜⣝⡢⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⡿⢣⣿⢾⡱⢮⣽⢧⢣⢏⣾⢣⡝⣣⠞⣥⢏⣳⢚⣬⠳⣍⠶⣩⠦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⡿⣫⣾⣽⣿⠟⡦⢽⣾⣏⢮⡓⢮⢞⡗⣮⢱⡛⢦⣋⣖⢫⠖⡽⢬⡓⢧⡛⡼⣡⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⡀⠁⠀⠈⡐⠈⠀⠀⠀⠀⠀⢀⣼⣿⡿⣱⣿⣿⣿⢏⡞⣭⣿⣿⢚⢦⣋⠗⣮⣿⣜⡣⣝⢣⡳⢬⡳⣋⢾⡥⢫⠧⣝⢲⢣⡝⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠂⠀⢠⠀⠀⠀⠃⠀⠈⠀⠀⠀⢠⣿⣿⡿⣱⡿⣿⣿⡟⡼⣘⣾⣿⣯⡙⣶⡏⡞⢦⠽⣧⣓⢎⡧⣝⢣⡳⠽⣞⢯⢣⣛⡬⣓⢯⡜⡜⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⠀⠀⠀⢠⣿⣿⣿⣳⣿⣿⣎⡻⣸⡱⢻⡟⠁⡧⡝⡏⣷⣙⢮⣙⣿⣎⡷⢞⡬⢧⣙⢧⣋⢿⣷⡘⠶⣍⠾⣝⡼⡸⠄⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⢀⡄⠀⠀⡄⠀⠀⠀⠀⠀⠀⠁⠀⣾⣿⣿⣷⣿⣿⣿⣿⢣⢎⡺⠋⠀⠇⡷⣙⢃⢺⡱⢎⡞⡼⣧⣳⠈⢺⡱⢎⡶⣩⠶⣹⡭⣛⢬⡛⣼⠶⣹⢹⡀⠀⠀⠀⠀⠀⠀⠀
+            ⢀⠂⠀⠀⠀⠀⠠⠀⠀⠀⡀⠀⠀⠘⣰⣿⣿⢿⣿⣿⠻⣿⡟⡜⢮⠋⠀⠀⠈⡷⣹⠀⢀⢏⠷⣸⡱⢿⣏⡀⠀⠹⣇⡞⣥⢛⡴⣏⠳⣎⡵⢎⣷⢣⢧⢣⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠁⠀⠀⢃⠀⠀⠀⡇⠀⠀⠀⢹⣿⣿⣿⣿⣿⣷⣄⡙⠭⡇⠀⠁⠄⠀⢱⣹⠀⠀⠨⣯⠵⣩⢛⣯⡇⠀⠀⠙⢜⠶⣩⠶⣩⢗⡣⢞⣱⢚⡧⡞⣭⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⡃⠀⠀⡤⠀⠀⠀⢇⠀⠀⠀⠈⣿⣿⣿⣷⣿⣿⣿⠜⡕⠀⠀⠀⠀⠀⠂⣿⡀⠀⠀⠀⠻⡥⣋⢿⡅⢠⠠⠂⠈⢛⠦⣏⠵⣪⠝⣮⣱⢋⣷⣙⠖⣆⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⡇⠀⠀⠸⠂⠀⠀⠉⠀⠀⠀⠀⢼⣿⣿⣾⣿⣿⣿⡞⡇⠀⠀⢀⣀⣤⣄⠸⡌⠀⠀⠀⠀⠘⢭⢖⣇⠀⣀⣠⣀⡈⠳⣎⢻⡥⣛⣼⡣⢏⣼⣹⡞⣱⣄⠀⠀⠀⠀⠀
+            ⠀⠀⠐⠰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠸⣿⣿⣿⣿⣿⣷⡿⠀⢠⣾⠟⢋⣭⣟⣆⠁⠀⠀⠀⠀⠀⠀⠙⢼⢰⣟⣯⣛⠻⢷⣽⣙⡶⢣⣾⣏⠳⣼⡇⣟⡴⢫⢦⠀⠀⠀⠀
+            ⠀⠀               ⠁⠀⠉⠿⠿⢿⣿⣻⣿⡇⡿⠁⢠⣿⣽⣤⣦⠀⠀⠀⠀⠀⠀⠀⠀ ⢸⣿⣿⣧⣧⠈⣿⠙⣽⢣⣿⣿⡳⣜⠯⣵⢺⡟⠚⢵⢠⡀⠀
+            ⠀⠀⠀⠀⠀⠀⠀⢀⠠⠀⠀⠀⠀⠃⢀⠀⠀⠀⠀⢹⣿⣿⣷⠀⠘⠅⢸⣿⣿⢿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⣿⣿⣿⡿⠀⠏⠰⣹⢾⡟⢿⣿⣎⡟⡼⣇⢿⠀⠀⠀⠉⠉
+            ⠀⠀⠀⠀⡀⠄⠀⠀⠀⠀⠀⡀⢀⢀⠐⠀⠀⠀⠀⣼⡿⣸⢻⣧⠀⠀⠂⡣⣦⠾⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠾⠴⠾⠁⠀⠀⠀⡝⣾⢭⢻⣿⡜⣣⣝⡷⣊⡇⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠐⠁⠰⠀⠀⠀⢀⣿⡱⢣⢏⡞⣣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⡧⢎⡳⣿⠼⡱⢎⡷⣩⢶⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⢸⣷⢭⡓⡞⡼⣕⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⣗⡫⣕⣻⢭⠳⣭⣿⣱⢺⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣷⣯⣼⣵⢎⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣵⣿⣇⡗⣎⢾⣍⠳⣖⣿⡧⢻⠀⠀⠀⠀
+            ⠀⢢⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣷⣞⣢⠀⠀⠀⠀⠀⠀⠔⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⡗⡼⣊⢶⢪⢽⣞⣿⣓⣻⠀⠀⠀⠀
+            ⠀⠀⠣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⣹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣟⣿⣱⠳⣍⢮⡓⢾⣿⡿⣒⠇⠀⠀⠀⠀
+            ⠀⠀⢠⣆⠀⠀⠀⠀⠀⠀⠀⢀⡀⢀⠀⠔⠁⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣀⢄⠀⠀⠀⠀⠀⠀⠀⠀⢀⢀⣴⣶⣿⣿⡿⣿⣿⣿⢔⡻⣜⢲⡙⢾⠟⢧⣹⠀⠀⠀⠀⠀
+            ⠀⠀⠸⣿⡇⠤⠭⠀⠀⠁⠉⠁⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣮⠒⢁⠀⠄⠀⢠⠐⠀⠀⢿⣿⣿⢿⡿⠁⣿⣿⣏⠮⣕⢎⢧⡻⡏⠀⢮⠁⠀⠀⠀⠀⠀
+            ⠀⠀⠀⢹⣿⡀⠐⡀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠐⠤⠀⠁⠀⠀⠱⠈⣿⣿⡟⠁⠀⣹⣿⢥⡛⡜⣎⢾⢳⠀⠀⠁⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⣿⣿⠀⠣⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⣈⠔⠀⢠⣿⣿⣿⣦⠀⣿⡟⢦⣹⠕⠁⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⢹⣿⡀⠀⠈⠠⢀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⣠⣆⠥⡀⠀⢸⣿⣿⣿⣿⣿⣤⠛⠊⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⣿⣷⡀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠏⡖⡡⢯⡢⡌⣿⣿⣿⣿⣿⣿⣷⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠘⣿⣿⣶⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⡼⡁⣿⡄⣷⡹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠐⣻⠐⣿⣿⡌⢷⡘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢨⡇⠎⡿⡿⣗⢨⢁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠿⠿⠿⠿⠿⠿⠻⠟⠿⠟⠿⠟⠿⠿⠻⠿⠟⠿⠿⠻⠿⠟⠿⠿⠇⠘⠤⠇⠏⠜⠆⠣⠿⠻⠟⠿⠻⠟⠿⠻⠟⠿⠇
+        </pre>
+    </div>
+
+    <div class="section-box">
+        <div class="box-title">0x0 - Introduction</div>
+        <pre>
+            
+            Dropped by: Floc, Astra, Zenon, Astrias
+            
+            Reason for Dox: Swatter, Extorter, larp
+        </pre>
+    </div>
+
+    <div class="section-box">
+        <div class="box-title">0x1 - Information</div>
+        <pre>
+            *Personal Information:
+            Full Name: Jayden Traxson
+            Phone Number: (617) 564-3387
+            DOB: 03.24.2003
+            Email: 
+            - DasEnde764@gmail.com
+            - dasendeshoa@gmail.com
+            - helplockaaa@gmail.com
+            Alias: DasEnde, Das, Ende,
+            
+        </pre>
+    </div>
+
+    <div class="section-box">
+        <div class="box-title">0x2 - Emails and Passwords</div>
+        <pre>
+
+            *Location Information:
+            Address: 213 S Comstock St
+            Area Code: 617
+            Zip: [Insert Zip Code]
+            City: Joliet
+            State: Illinois
+            Country: United States
+            Continent: North America
+
+
+        </pre>
+    </div>
+
+    <div class="section-box">
+        <div class="box-title">0x6 - Credits</div>
+        <pre>
+
+            *Relatives:
+            - Father: Triston Traxson  
+              - Phone Number: (617) 716-482  
+            - Mother: Sharen Traxson  
+              - Phone Number: (617) 472-948  
+            - Sister: Kaylee Traxson  
+            - Brother: Daniel Traxson  
+            - Others: N/A
+
+
+        </pre>
+    </div>
+    <div class="section-box">
+        <div class="box-title">0x6 - Credits</div>
+        <pre>
+            *IP Information:
+            IP Address: 68.235.46.142
+            Types (Public/Private): Public IP
+            Internet Protocol Version: IPv4
+            
+            IP Information:
+            - CIDR: 68.235.46.142/24
+            - Range: Class A Network (From 1.0.0.0 to 126.255.255.255)
+            - Reverse DNS: 142.46.235.68.in-addr.arpa
+            - Host Address: static-68-235-46-142.cust.tzulo.com
+            - Nameservers:
+              - ns2.tzulo.com >> 208.77.16.12
+              - ns1.tzulo.com >> 208.77.16.11
+            - Remote Port: 54560
+            - Proxy Checker Header: Not Detected
+            - Browser Referer: google.com
+            - Computer System: Windows NT 10.0 (Windows 10/11)
+            - Browser Type: Chrome 132.0
+            - ProductSub: 20100101
+            - Layout Engine: Gecko
+            - Engine Version: 132.0
+            - Browser Language: en-US, en;q=0.5
+            
+            Relevant IP Address Location Information:
+            - Continent: North America (NA)
+            - Country: United States (US)
+            - State: Illinois
+            - City: Chicago
+            - Zip Code: 60605
+            - ISP: TZULO
+            - Organization: TZULO
+            - AS Number: AS11878 TZULO
+            - Speed Connection: Unknown Internet Speed
+            
+            Weather in Chicago:
+            - IP Weather Station: Chicago
+            - Sky: clear sky
+            - Temp: 10.3 °C (max 11.1 °C / min 8.4 °C)
+            - Wind Speed: 3.1 m/s
+            - Wind Direction: 280.0°
+            - Humidity: 65%
+            - Cloudiness: 0%
+            - Atmospheric Pressure: 1025 kPa
+            
+            Time Zone: America/Menominee
+            - Local Time: 20:41:17
+            - Timezone GMT Offset: -21600
+            - Sunrise / Sunset: 06:32 / 16:36
+            
+            Extra IP Details:
+            - Continent Lat/Lon: 46.07305 / -100.546
+            - Country Lat/Lon: 38 / -98
+            - City Lat/Lon: 41.871 / -87.6289
+            - Language: English
+            - Currency: United States dollar ($) (USD)
+            - IDD Code: +1
+        </pre>
+    </div>
+    <div class="section-box">
+        <div class="box-title">0x6 - Credits</div>
+        <pre>
+            Dropped by: Floc, Astra, Zenon, Astrias
+        </pre>
+    </div>
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Prevent certain key combinations
+        document.addEventListener('keydown', event => {
+            if (
+                event.key === 'F12' || 
+                (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'C' || event.key === 'J')) || 
+                (event.ctrlKey && event.key === 'U')
+            ) {
+                event.preventDefault();
+            }
+        });
+
+        // Detect developer tools
+        (function() {
+            function detectDevTools() {
+                const devtools = /./;
+                devtools.toString = () => {
+                    this.opened = true;
+                };
+                console.log('%c', devtools);
+            }
+            setInterval(() => {
+                detectDevTools();
+                if (window.devtools && window.devtools.opened) {
+                    alert('Developer tools detected! Please close them.');
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>

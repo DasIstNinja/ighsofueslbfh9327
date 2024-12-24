@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/gif" sizes="64x64" href="200.gif">
+    <meta property="og:title" content="#Swats!until#death" />
+    <title>#Swats!until#death</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pirata One', sans-serif;
+            color: white;
+            height: 100vh; 
+            display: flex;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Left Panel */
+        .left-panel {
+            width: 250px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left-panel h2 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .dropdown {
+            margin-bottom: 20px;
+        }
+
+        .dropdown button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            flex-direction: column;
+            margin-top: 5px;
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 1px solid #444;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: flex;
+        }
+
+        /* Right Section */
+        .main-content {
+            flex-grow: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .black-box {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <h2>Pastes</h2>
+            <div class="dropdown">
+                <button>Open Pastes</button>
+                <div class="dropdown-content">
+                    <a href="drex.html">Ruin / Drex</a>
+                    <a href="ion.html">Ion Hood Rich Owner / Strapup</a>
+                    <a href="dasende.html">DasEnde Swatter / E-Girl Extorter</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <video class="video-background" autoplay loop muted>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="black-box">
+                <p>Welcome to #Swats!until#death</p>
+            </div>
+        </div>
+    </div>
+    <audio id="music-player"></audio>
+    <script src="main.js"></script>
+
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Prevent certain key combinations
+        document.addEventListener('keydown', event => {
+            if (
+                event.key === 'F12' || 
+                (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'C' || event.key === 'J')) || 
+                (event.ctrlKey && event.key === 'U')
+            ) {
+                event.preventDefault();
+            }
+        });
+
+        // Detect developer tools
+        (function() {
+            function detectDevTools() {
+                const devtools = /./;
+                devtools.toString = () => {
+                    this.opened = true;
+                };
+                console.log('%c', devtools);
+            }
+            setInterval(() => {
+                detectDevTools();
+                if (window.devtools && window.devtools.opened) {
+                    alert('Developer tools detected! Please close them.');
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>

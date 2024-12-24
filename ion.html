@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ion Paste</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: black;
+            color: rgb(255, 255, 255);
+            padding: 20px;
+        }
+        .header-box, .section-box {
+            border: 2px solid rgb(247, 7, 175);
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #0a0a0a;
+        }
+        .header-box {
+            text-align: center;
+        }
+        .section-box pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .box-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            border-bottom: 1px solid rgb(216, 45, 2);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-box">
+        <pre>
+            ▄████▄   ▒█████   ███▄ ▄███▓ ██▓ ███▄    █   ▄████      ██████  ▒█████   ▒█████   ███▄    █  ▐██▌ 
+            ▒██▀ ▀█  ▒██▒  ██▒▓██▒▀█▀ ██▒▓██▒ ██ ▀█   █  ██▒ ▀█▒   ▒██    ▒ ▒██▒  ██▒▒██▒  ██▒ ██ ▀█   █  ▐██▌ 
+            ▒▓█    ▄ ▒██░  ██▒▓██    ▓██░▒██▒▓██  ▀█ ██▒▒██░▄▄▄░   ░ ▓██▄   ▒██░  ██▒▒██░  ██▒▓██  ▀█ ██▒ ▐██▌ 
+            ▒▓▓▄ ▄██▒▒██   ██░▒██    ▒██ ░██░▓██▒  ▐▌██▒░▓█  ██▓     ▒   ██▒▒██   ██░▒██   ██░▓██▒  ▐▌██▒ ▓██▒ 
+            ▒ ▓███▀ ░░ ████▓▒░▒██▒   ░██▒░██░▒██░   ▓██░░▒▓███▀▒   ▒██████▒▒░ ████▓▒░░ ████▓▒░▒██░   ▓██░ ▒▄▄  
+            ░ ░▒ ▒  ░░ ▒░▒░▒░ ░ ▒░   ░  ░░▓  ░ ▒░   ▒ ▒  ░▒   ▒    ▒ ▒▓▒ ▒ ░░ ▒░▒░▒░ ░ ▒░▒░▒░ ░ ▒░   ▒ ▒  ░▀▀▒ 
+              ░  ▒     ░ ▒ ▒░ ░  ░      ░ ▒ ░░ ░░   ░ ▒░  ░   ░    ░ ░▒  ░ ░  ░ ▒ ▒░   ░ ▒ ▒░ ░ ░░   ░ ▒░ ░  ░ 
+            ░        ░ ░ ░ ▒  ░      ░    ▒ ░   ░   ░ ░ ░ ░   ░    ░  ░  ░  ░ ░ ░ ▒  ░ ░ ░ ▒     ░   ░ ░     ░ 
+            ░ ░          ░ ░         ░    ░           ░       ░          ░      ░ ░      ░ ░           ░  ░    
+            ░                                                                                                  
+        </pre>
+    </div>
+
+    <div class="section-box">
+        <div class="box-title">0x0 - Lets Begin!</div>
+        <pre>
+            Ion you will be targeted... aka Daniel Anderson
+            who lives at 6749 Segovia Blvd, Fort Lauderdale, FL 33331
+        </pre>
+    </div>
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Prevent certain key combinations
+        document.addEventListener('keydown', event => {
+            if (
+                event.key === 'F12' || 
+                (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'C' || event.key === 'J')) || 
+                (event.ctrlKey && event.key === 'U')
+            ) {
+                event.preventDefault();
+            }
+        });
+
+        // Detect developer tools
+        (function() {
+            function detectDevTools() {
+                const devtools = /./;
+                devtools.toString = () => {
+                    this.opened = true;
+                };
+                console.log('%c', devtools);
+            }
+            setInterval(() => {
+                detectDevTools();
+                if (window.devtools && window.devtools.opened) {
+                    alert('Developer tools detected! Please close them.');
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>
