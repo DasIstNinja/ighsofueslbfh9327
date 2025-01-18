@@ -4,15 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/gif" sizes="64x64" href="200.gif">
-    <meta property="og:title" content="#Swats!until#death" />
     <title>#Swats!until#death</title>
-    <link rel="stylesheet" href="main.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet"/>
-    <script defer src="stars.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
     <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
-    <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
     <style>
         * {
             margin: 0;
@@ -23,26 +18,47 @@
         body {
             font-family: 'Pirata One', sans-serif;
             color: white;
-            height: 100vh; 
-            overflow: hidden; 
+            height: 100vh;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: black;
             position: relative;
         }
 
-        /* Add the video background */
-        .video-background {
+        .image-background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Make sure the video covers the screen */
-            z-index: -1; /* Send the video behind the content */
+            background: url('RBJxIN.png') no-repeat center center/cover;
+            z-index: -2;
         }
 
-        #enter-overlay {
+        /* Add a dim and gradient overlay */
+        .dim-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+            z-index: -1;
+        }
+
+        /* Particle effect container */
+        .particle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #loading-screen {
             position: absolute;
             top: 0;
             left: 0;
@@ -52,165 +68,113 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
             z-index: 10;
+            flex-direction: column;
+            transition: opacity 0.5s ease;
+        }
+
+        #loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
         }
 
         .glitch {
-            font-size: 1em;
-            color: #ffffff;
+            font-size: 2em;
+            color: white;
             position: relative;
-            animation: glitch 0.05s infinite, flicker 2s infinite;
+            animation: glitch 0.05s infinite;
         }
 
-        .flicker-text1 {
-            color: #c3c3c3;
-            animation: flicker1 2s infinite;
+        .button-panel {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            z-index: 5;
+            animation: fadeIn 0.5s ease forwards;
         }
 
-        @keyframes glitch {
-            0%, 100% {
-                transform: translate(0);
-            }
-            10% {
-                transform: translate(-0.5px, 0.5px);
-            }
-            20% {
-                transform: translate(-0.5px, -0.5px);
-            }
-            30% {
-                transform: translate(0.5px, 0.5px);
-            }
-            40% {
-                transform: translate(0.5px, -0.5px);
-            }
-            50% {
-                transform: translate(-0.5px, 0.5px);
-            }
-            60% {
-                transform: translate(-0.5px, -0.5px);
-            }
-            70% {
-                transform: translate(0.5px, 0.5px);
-            }
-            80% {
-                transform: translate(0.5px, -0.5px);
-            }
-            90% {
-                transform: translate(-0.5px, 0.5px);
-            }
+        .button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #ff5555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        @keyframes flicker {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% {
-                opacity: 1;
-            }
-            20%, 24%, 55% {
+        .button:hover {
+            background-color: #ff4444;
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            background-color: #ff3333;
+        }
+
+        @keyframes fadeIn {
+            from {
                 opacity: 0;
             }
+            to {
+                opacity: 1;
+            }
         }
-
-        .container {
-            display: flex;
-            width: 100%;
-            height: 100%;
-        }
-
-        .center-half {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            color: white;
-            text-align: center;
-            position: relative;
-            z-index: 5;
-        }
-
-        .interactive-section {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            height: 500px;
-        }
-
-        .meow {
-            color: #ffffff;
-            font-size: 19px;
-            margin-top: -10px;
-        }
-
-        a {
-            color: red;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: white;
-        }
-
-        
-        .black-box {
-        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
-        border-radius: 15px; /* Rounded corners */
-        width: 400px; /* Box width */
-        height: 200px; /* Fixed height */
-        margin: 0 auto; /* Center horizontally */
-        text-align: center; /* Center align text */
-        display: flex; /* Flexbox for alignment */
-        flex-direction: column; /* Stack children vertically */
-        justify-content: center; /* Vertically center content */
-        align-items: center; /* Horizontally center content */
-        overflow: hidden; /* Prevent overflow of content */
-        z-index: 10; /* Place the box above particles */
-        position: relative; /* Ensure z-index works */
-    }
-
-    .social-links p {
-        margin: 5px 0; /* Reduced margin between links */
-        font-size: 25px; /* Optional: Adjust font size for better fit */
-    }
-
-    .meow {
-        margin-bottom: 10px; /* Add space below the title */
-    }
     </style>
 </head>
 <body>
-    <div id="enter-overlay" onclick="enterSite()">
-        <div class="glitch">Click to enter</div>
-    </div>
-    <video class="video-background" autoplay loop muted>
-        <source src="1222.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <div class="container">
-        <!-- Left Section -->
-        <div class="center-half">
-            <div class="black-box">
-                <div class="interactive-section" id="logo-center">
-                    <img src="tongue.png" alt="obey" style="display: none;">
-                </div>
-                <p class="meow glitch"><span class="status-glitch">FlocISReal</span></p>
-                <div class="social-links">
-                    <p><a href="https://t.me/swattingcomfeds" target="_blank">TeleGram: t.me/swattingcomfeds</a></p>
-                    <p><a href="https://gmail.com" target="_blank">Mail: FlocISReal@gmx.co.uk</a></p>
-                    <p><a href="https://doxbin.org/user/FlocISReal" target="_blank">doxbin: FlocISReal</a></p>
-                    <p><a href="https://doxbin.org/user/repercing" target="_blank">doxbin: Detective</a></p>
-                </div>
-            </div>
-        </div>
+    <div id="loading-screen">
+        <div class="glitch">Loading...</div>
     </div>
 
-    <audio id="music-player"></audio>
+    <div class="image-background"></div>
+    <div class="dim-overlay"></div>
+    <div class="particle-container" id="particles"></div>
 
-<button class="bottom-right-button" onclick="window.location.href='pastes.html'">Go to Pastes</button>
+    <div id="button-panel" class="button-panel">
+        <button class="button" onclick="goTo('pastes.html')">Pastes</button>
+        <button class="button" onclick="goTo('main.html')">Socials</button>
+    </div>
 
+    <script>
+        function goTo(url) {
+            window.location.href = url;
+        }
 
-    <script src="main.js"></script>
+        // Simulate loading screen
+        setTimeout(() => {
+            const loadingScreen = document.getElementById('loading-screen');
+            const buttonPanel = document.getElementById('button-panel');
+            
+            // Hide the loading screen
+            loadingScreen.classList.add('hidden');
+            
+            // Show the button panel after loading
+            setTimeout(() => {
+                buttonPanel.style.display = 'block';
+            }, 500);
+        }, 3000);
 
+        // Add particles
+        const particles = new NextParticle({
+            image: { type: 'image', src: 'RBJxIN.png' },
+            color: '#ffffff',
+            container: document.getElementById('particles'),
+            particleGap: 5,
+            particleSize: 2,
+            width: window.innerWidth,
+            height: window.innerHeight,
+            speed: 0.5,
+        });
+    </script>
 </body>
 </html>
