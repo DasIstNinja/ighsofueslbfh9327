@@ -147,7 +147,10 @@
         <button class="button" onclick="goTo('main.html')">Socials</button>
     </div>
     
-    <audio id="music-player"></audio>
+    <audio id="bg-music" autoplay loop>
+        <source src="track6.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     
     <script>
         function goTo(url) {
@@ -179,18 +182,10 @@
             height: window.innerHeight,
             speed: 0.5,
         });
-        
-    </script>
-    <audio id="bg-music" autoplay loop>
-        <source src="track6.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const audio = document.getElementById('bg-music');
             audio.volume = 0.5;  // Adjust volume (0.0 to 1.0)
         });
-    </script>
+    </script> 
 </body>
 </html>
